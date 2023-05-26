@@ -1,5 +1,6 @@
 package com.studentdetails.service.impl;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,6 +15,7 @@ import com.studentdetails.service.StudentDetailsService;
 @Service
 public class StudentDetailsServiceImpl implements StudentDetailsService {
 
+	@Cacheable(value = "itemCache")
 	@Override
 	public StudentDetailsResponse getStudentDetailsResponse() {
 
