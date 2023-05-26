@@ -14,11 +14,11 @@ public class StudentDetailsConstants {
 	/*
 	 * Error Messages.
 	 */
-	public static final String ACCOUNT_SERVICE_UNAVAILABLE = "Account service is unawailable.";
+	public static final String ACCOUNT_SERVICE_UNAVAILABLE = "Account service is unavailable.";
 
-	public static final String ADDRESS_SERVICE_UNAVAILABLE = "Address service is unawailable.";
+	public static final String ADDRESS_SERVICE_UNAVAILABLE = "Address service is unavailable.";
 
-	public static final String GRADES_SERVICE_UNAVAILABLE = "Grades service is unawailable.";
+	public static final String GRADES_SERVICE_UNAVAILABLE = "Grades service is unavailable.";
 
 	public static final String WRONG_RESPONSE_FROM_ACCOUNT_SERVICE = "Wrong response from Account Service.";
 

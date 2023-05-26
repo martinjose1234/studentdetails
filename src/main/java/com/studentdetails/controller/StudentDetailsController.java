@@ -43,8 +43,12 @@ public class StudentDetailsController {
 			studentDetailsResponse = studentDetailsService.getStudentDetailsResponse();
 		} catch (StudentDetailsException ex) {
 			logger.error(StudentDetailsConstants.ERROR_TITLE + ex.getMessage());
-			ErrorResponse errorResponse = new ErrorResponse(ex.getMessage(), ex.getErrorCode());
+			ErrorResponse errorResponse = new ErrorResponse(ex.getMessage(), HttpStatus.SERVICE_UNAVAILABLE.value());
 			return new ResponseEntity<>(errorResponse, HttpStatus.SERVICE_UNAVAILABLE);
+		} catch (Exception ex) {
+			logger.error(StudentDetailsConstants.ERROR_TITLE + ex.getMessage());
+			ErrorResponse errorResponse = new ErrorResponse(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR.value());
+			return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
 		return new ResponseEntity<>(studentDetailsResponse, HttpStatus.OK);
